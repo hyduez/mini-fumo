@@ -1,3 +1,5 @@
+import { MessageAttachment } from 'discord.js';
+
 export const interaction = {
     name: 'avatar',
     testOnly: false,
@@ -5,6 +7,7 @@ export const interaction = {
     run: async (bot, interact, args) => {
         await interact.deferReply({ ephemeral: true })
         const user = await bot.user.fetch(interact.targetId)
-        interact.followUp({ content: user.avatarURL({ dynamic: true, size: 1024 }) })
+        const avatar = new MessageAttachment(user.avatarURL({ dynamic: true, size: 1024 }), 'avatar.png')
+        interact.followUp({ files: [avatar] })
     }
 }

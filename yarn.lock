@@ -862,6 +862,13 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
+fumo-api@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/fumo-api/-/fumo-api-3.0.2.tgz#9bcb95943b685945378c8b7c725b44c9286395be"
+  integrity sha512-Ksrii66tU7UDOXiAujsB5MId4SRmoTAwE/SJ7GO3Br1+ZG0FIh0spHTgk5Yvw3M9rwlTJqO132Gn5E/kuz6yzQ==
+  dependencies:
+    node-fetch "^2.6.1"
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"

@@ -7,5 +7,6 @@ interface Run {
 
 export type Interaction = ApplicationCommandData & {
 	testOnly: boolean;
+	type: string;
 	run: Run;
 };

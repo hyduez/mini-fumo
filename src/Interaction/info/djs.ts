@@ -1,17 +1,18 @@
-import axios from 'axios';
 import { SlashCommandBuilder } from '@discordjs/builders';
+import { Interaction } from '../../Interfaces';
+import axios from 'axios';
 
 export const interaction = {
 	...new SlashCommandBuilder()
  	.setName("docs")
-	.setDescription("👀")
+	.setDescription("Search for methods, events or functions in the Docs")
     .addStringOption(option => option
 		.setName('search')
-		.setDescription('Seccion a buscar')
+		.setDescription('Section to search')
 		.setRequired(true))
     .addStringOption(option => option
         .setName('version')
-        .setDescription('Version de la documentacion')
+        .setDescription('Documentation version')
         .addChoices([['stable', 'stable'], ['master', 'master']])
         .setRequired(false)),
 	testOnly: false,

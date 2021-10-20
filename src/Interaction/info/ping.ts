@@ -3,7 +3,7 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 export const interaction = {
 	...new SlashCommandBuilder()
  	.setName("ping")
-	.setDescription("⭐"),
+	.setDescription("Ping command"),
 	testOnly: false,
 	type: 'CHAT_INPUT',
 	run: async (bot, interact, args) => {
