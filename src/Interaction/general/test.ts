@@ -7,11 +7,10 @@ export const interaction: Interaction = {
 	testOnly: true,
 	type: 'CHAT_INPUT',
 	options: [{
-		name: 'asdsadsdad',
-		description: 'uwu',
+		name: 'fumos',
+		description: 'love',
 		type: 'STRING',
 		required: false,
-
 	}],
 	run: async (bot, interact, args,) => {
 		await interact.deferReply({ ephemeral: true });
