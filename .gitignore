@@ -7,4 +7,5 @@ dist
 !.yarn/versions
 node_modules
 config.json
+yarn-error.log
 .env
