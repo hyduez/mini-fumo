@@ -42,33 +42,5 @@ export const event: Event = {
 			);
 			cmd.run(bot, interact, args).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
 		}
-
-		/* if (interact.isCommand()) {
-
-			const cmd = bot.interact.get(interact.commandName);
-			if (!cmd) return interact.followUp({ content: "An error has occured" });
-	
-			const args = [];
-	
-			for (let option of interact.options.data) {
-				if (option.type === "SUB_COMMAND") {
-					if (option.name) args.push(option.name);
-					option.options?.forEach((x) => {
-						if (x.value) args.push(x.value);
-					});
-				} else if (option.value) args.push(option.value);
-			}
-			interact.member = interact.guild.members.cache.get(interact.user.id);
-	
-			cmd.run(bot, interact, args);
-		}
-	
-		if (interact.isContextMenu()) {
-			const args = [];
-			const command = bot.interact.get(interact.commandName);
-			if (command) command.run(bot, interact, args);
-		} */
-		
-		
 	},
 };
