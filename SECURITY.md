@@ -1,4 +1,4 @@
-## Supported Versions (Node.JS)
+## Supported Versions (NodeJs)
 
 | Version | Supported          |
 | ------- | ------------------ |
