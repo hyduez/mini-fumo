@@ -3,7 +3,7 @@ import { Interaction } from '../../Interfaces';
 export const interaction: Interaction = {
 	name: 'text',
 	description: 'Make the bot say something',
-	testOnly: true,
+	testOnly: false,
 	options: [
 		{
 			name: 'content',
