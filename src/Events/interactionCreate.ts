@@ -31,7 +31,7 @@ export const event: Event = {
 			interact.member = interact.guild.members.cache.get(
 				interact.user.id
 			);
-			cmd.run(bot, interact, args);
+			cmd.run(bot, interact, args).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
 		}
 		if (interact.isContextMenu()) {
 			const cmd = bot.interact.get(interact.commandName);
@@ -40,7 +40,7 @@ export const event: Event = {
 			interact.member = interact.guild.members.cache.get(
 				interact.user.id
 			);
-			cmd.run(bot, interact, args);
+			cmd.run(bot, interact, args).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
 		}
 
 		/* if (interact.isCommand()) {

@@ -25,10 +25,10 @@ export const interaction = {
         axios.get(url).then((e) => {
             const { data } = e;
             if (data) {
-                interact.followUp({ embeds: [data] })
+                interact.followUp({ embeds: [data] }).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
             } else {
                 interact.followUp({ content: 'Oh no papu, no he podido hayar eso :\'v'});
             }
-        });
+        })
 	},
 };
