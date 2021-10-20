@@ -1,22 +1,35 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
 import { Interaction } from '../../Interfaces';
 import axios from 'axios';
 
-export const interaction = {
-	...new SlashCommandBuilder()
- 	.setName("docs")
-	.setDescription("Search for methods, events or functions in the Docs")
-    .addStringOption(option => option
-		.setName('search')
-		.setDescription('Section to search')
-		.setRequired(true))
-    .addStringOption(option => option
-        .setName('version')
-        .setDescription('Documentation version')
-        .addChoices([['stable', 'stable'], ['master', 'master']])
-        .setRequired(false)),
-	testOnly: false,
+export const interaction: Interaction = {
+	name: 'docs',
+	description: 'Search for methods, events or functions in the Docs',
+    testOnly: false,
 	type: 'CHAT_INPUT',
+    options: [
+        {
+            name: 'search',
+            description: 'Section to search',
+            type: 'STRING',
+            required: false
+        },
+        {
+            name: 'version',
+            description: 'Documentation version',
+            type: 'STRING',
+            required: false,
+            choices: [
+                {
+                    name: 'stable',
+                    value: 'stable'
+                },
+                {
+                    name: 'master',
+                    value: 'master'
+                }
+            ]
+        }
+    ],
 	run: async (bot, interact, args) => {
 		await interact.deferReply({ ephemeral: false });
         const search = interact.options.getString('search');

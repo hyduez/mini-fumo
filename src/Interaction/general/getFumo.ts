@@ -1,18 +1,15 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
+import { Interaction } from '../../Interfaces';
 import { randomFumo } from 'fumo-api';
-import { MessageAttachment } from 'discord.js';
 
-export const interaction = {
-	...new SlashCommandBuilder()
-	.setName("getfumo")
-	.setDescription("Fumos?"),
-	testOnly: false,
+export const interaction: Interaction = {
+	name: 'getfumo',
+	description: 'Fumos?',
+	testOnly: true,
 	type: 'CHAT_INPUT',
 	run: async (bot, interact, args,) => {
 		await interact.deferReply({ ephemeral: false });
 		randomFumo().then((url) => { 
-			const fumo = new MessageAttachment(url, 'fumo.jpg');
-			interact.followUp({ files: [fumo] });
+			interact.followUp({ content: url });
 		})
 	},
 };
