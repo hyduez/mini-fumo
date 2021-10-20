@@ -15,7 +15,7 @@ export const interaction: Interaction = {
 	}],
 	run: async (bot, interact, args,) => {
 		await interact.deferReply({ ephemeral: true });
-        let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos?')
+        let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos now')
         interact.followUp({ embeds: [
             {
                 description: url
