@@ -1,10 +1,10 @@
 import { Client, Collection } from 'discord.js';
-import dotenv from 'dotenv';
-dotenv.config();
+import { config } from 'dotenv';
 import path from 'path';
 import { Interaction, Event } from '../Interfaces';
 import consola from 'consola';
 import { readdirSync  } from 'fs';
+config();
 
 class Bot extends Client {
 	public interact: Collection<string, Interaction> = new Collection();
@@ -12,7 +12,7 @@ class Bot extends Client {
 	public config = process.env;
 	public console = consola;
 	public constructor() {
-		super({ ws: { properties: { $browser: "Discord Android", $os: "Android"}},intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] }});
+		super({ ws: { properties: { $browser: "Discord Android", $os: "Android"}}, intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] }});
 	}
 
 	public async init() {
