@@ -3,4 +3,4 @@
 | Version | Supported          |
 | ------- | ------------------ |
 | 16.6.x   | :white_check_mark: |
-| < 15.x    | :x:                |
+| < 16.5.x    | :x:                |
