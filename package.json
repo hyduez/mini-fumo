@@ -1,65 +1,20 @@
 {
 	"name": "minifumo",
 	"version": "0.1.0",
-	"description": "Base",
+	"description": "Fumos",
 	"main": "dist/index.js",
 	"scripts": {
 		"test": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
-		"lint": "prettier --write .",
 		"build": "tsc"
 	},
 	"keywords": [],
 	"author": "Hyduez",
 	"license": "MIT",
 	"devDependencies": {
-		"@commitlint/cli": "^13.1.0",
-		"@commitlint/config-angular": "^13.1.0",
 		"@types/node": "^16.11.1",
-		"husky": "^7.0.1",
-		"lint-staged": "^11.1.2",
-		"prettier": "^2.3.2",
 		"ts-node": "^10.2.0",
 		"ts-node-dev": "^1.1.8",
 		"typescript": "^4.3.5"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "yarn dlx @yarnpkg/doctor && lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-		}
-	},
-	"lint-staged": {
-		"*.ts": "prettier --write",
-		"*.js": "prettier --write"
-	},
-	"commitlint": {
-		"extends": [
-			"@commitlint/config-angular"
-		],
-		"rules": {
-			"scope-case": [
-				2,
-				"always",
-				"pascal-case"
-			],
-			"type-enum": [
-				2,
-				"always",
-				[
-					"chore",
-					"build",
-					"ci",
-					"docs",
-					"feat",
-					"fix",
-					"perf",
-					"refactor",
-					"revert",
-					"style",
-					"test"
-				]
-			]
-		}
 	},
 	"dependencies": {
 		"axios": "^0.23.0",
@@ -72,5 +27,5 @@
 		"mongoose": "^5.13.7"
 	},
 	"repository": "https://github.com/Hyduez/MiniFumo/",
-	"private": true
+	"private": false
 }
