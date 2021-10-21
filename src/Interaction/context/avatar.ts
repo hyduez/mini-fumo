@@ -1,4 +1,5 @@
 import { MessageAttachment } from 'discord.js';
+/* import { Interaction } from '../../Interfaces'; */
 
 export const interaction = {
     name: 'avatar',
