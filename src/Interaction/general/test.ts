@@ -12,13 +12,10 @@ export const interaction: Interaction = {
 		type: 'STRING',
 		required: false,
 	}],
-	run: async (bot, interact, args,) => {
-		await interact.deferReply({ ephemeral: true });
-        let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos now')
-        interact.followUp({ embeds: [
-            {
-                description: url
-            }
-        ] });
+	run: async (_bot, interact, _args) => {
+
+		let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos now');
+
+		await interact.reply({ embeds: [{ description: url }] });
 	},
 };
