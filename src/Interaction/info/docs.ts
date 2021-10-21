@@ -11,7 +11,7 @@ export const interaction: Interaction = {
             name: 'search',
             description: 'Section to search',
             type: 'STRING',
-            required: false
+            required: true
         },
         {
             name: 'version',
