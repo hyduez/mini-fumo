@@ -6,7 +6,6 @@ export const interaction: Interaction = {
 	testOnly: false,
 	type: 'CHAT_INPUT',
 	run: async (bot, interact, args) => {
-		await interact.deferReply({ ephemeral: true });
-		interact.followUp({ content: `pong! ${bot.ws.ping}ms <:cirnu_hm:890470624055660585>` });
+		await interact.reply({ content: `Pong! ${bot.ws.ping}ms <:cirnu_hm:890470624055660585>` });
 	},
 };
