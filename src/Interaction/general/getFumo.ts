@@ -1,5 +1,5 @@
 import { Interaction } from '../../Interfaces';
-import { randomFumo } from 'fumo-api';
+import { randomFumo } from 'fumo-api/src/index';
 
 export const interaction: Interaction = {
 	name: 'getfumo',
@@ -8,8 +8,9 @@ export const interaction: Interaction = {
 	type: 'CHAT_INPUT',
 	run: async (bot, interact, args,) => {
 		await interact.deferReply({ ephemeral: false });
-		randomFumo().then((url) => { 
+
+		randomFumo().then((url) => {
 			interact.followUp({ content: url });
-		})
+		});
 	},
 };

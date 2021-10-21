@@ -9,11 +9,11 @@
 		"esModuleInterop": true,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
+		"noImplicitAny": false,
 		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
-		"resolveJsonModule": true,
-		"types": ["node"]
+		"resolveJsonModule": true
 	},
 	"include": ["src", "config.ts"],
 	"exclude": ["node_modules"]

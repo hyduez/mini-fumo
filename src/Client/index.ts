@@ -3,7 +3,7 @@ import { config } from 'dotenv';
 import path from 'path';
 import { Interaction, Event } from '../Interfaces';
 import consola from 'consola';
-import { readdirSync  } from 'fs';
+import { readdirSync } from 'fs';
 config();
 
 class Bot extends Client {
@@ -12,11 +12,12 @@ class Bot extends Client {
 	public config = process.env;
 	public console = consola;
 	public constructor() {
-		super({ ws: { properties: { $browser: "Discord Android", $os: "Android"}}, intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] }});
+		super({ ws: { properties: { $browser: "Discord Android", $os: "Android" } }, intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] } });
+		this.init();
 	}
 
 	public async init() {
-		this.login(this.config.TOKEN);
+		await this.login(this.config.TOKEN);
 
 		const eventPath = path.join(__dirname, '..', 'Events');
 		readdirSync(eventPath).forEach(async (file) => {
@@ -27,7 +28,7 @@ class Bot extends Client {
 
 		const arrayOfInteraction = [];
 		const arrayOfInteractionPrivate = [];
-		const interacPath = path.join(__dirname, '..', 'Interaction'); 
+		const interacPath = path.join(__dirname, '..', 'Interaction');
 
 		readdirSync(interacPath).forEach((dir) => {
 			const interactFolder = readdirSync(`${interacPath}/${dir}`).filter((file) => file.endsWith('.ts'));
@@ -44,7 +45,7 @@ class Bot extends Client {
 			});
 		});
 
-		this.on('ready', async () => {
+		this.once('ready', async () => {
 			await this.guilds.cache.get(this.config.TESTSERVER).commands.set(arrayOfInteractionPrivate);
 			await this.application.commands.set(arrayOfInteraction);
 		});
