@@ -9,6 +9,6 @@ export const interaction = {
 
         const avatar = user.avatarURL({ dynamic: true, size: 2048 });
 
-        await interact.reply(avatar);
+        await interact.reply({ content: avatar, ephemeral: true });
     }
 }
