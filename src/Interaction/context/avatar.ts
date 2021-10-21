@@ -1,14 +1,14 @@
-import { MessageAttachment } from 'discord.js';
-/* import { Interaction } from '../../Interfaces'; */
+import { CommandInteraction, MessageAttachment } from 'discord.js';
 
 export const interaction = {
     name: 'avatar',
     testOnly: false,
     type: 'USER',
-    run: async (bot, interact, args) => {
-        await interact.deferReply({ ephemeral: true })
-        const user = await bot.user.fetch(interact.targetId)
-        const avatar = new MessageAttachment(user.avatarURL({ dynamic: true, size: 1024 }))
-        interact.followUp({ files: [avatar] })
+    run: async (bot, interact: CommandInteraction, _args: string[]) => {
+        const user = interact.options.getUser('user', true);
+
+        const avatar = user.avatarURL({ dynamic: true, size: 2048 });
+
+        await interact.reply(avatar);
     }
 }
