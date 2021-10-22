@@ -1,4 +1,4 @@
-import { Interaction } from '../../_interfaces';
+import { Interaction } from '../../interfaces';
 
 export const interaction: Interaction = {
 	name: 'text',

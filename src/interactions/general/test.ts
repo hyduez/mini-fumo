@@ -1,4 +1,4 @@
-import { Interaction } from '../../_interfaces';
+import { Interaction } from '../../interfaces';
 import { Formatters } from 'discord.js';
 
 export const interaction: Interaction = {

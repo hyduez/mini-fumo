@@ -1,4 +1,4 @@
-import { Interaction } from '../../_interfaces';
+import { Interaction } from '../../interfaces';
 import axios from 'axios';
 import { MessageEmbedOptions } from 'discord.js';
 

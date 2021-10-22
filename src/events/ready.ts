@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { Event } from '../_interfaces';
+import { Event } from '../interfaces';
 
 export const event: Event<'ready'> = {
 	name: 'ready',
