@@ -14,8 +14,9 @@ export const interaction: Interaction = {
 	],
 	type: 'CHAT_INPUT',
 	run: async (_bot, interact, _args) => {
-		const content = interact.options.getString('content', true);
 
+		const content = interact.options.getString('content'); /* Options(Line 12) */
+		
 		await interact.reply({ content: content.length > 500 ? content.slice(0, 500) + '...' : content });
 	},
 };

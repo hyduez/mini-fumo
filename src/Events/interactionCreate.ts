@@ -35,7 +35,7 @@ export const event: Event = {
 				const error = err as Error;
 
 				console.log(error.stack);
-				await interact.reply(`An error has occurred: \`${error.message}\``);
+				await interact.reply({ content: `An error has occurred: \`${error.message}\``, ephemeral: true });
 			}
 		}
 		if (interact.isContextMenu()) {
@@ -50,7 +50,7 @@ export const event: Event = {
 				const error = err as Error;
 
 				console.log(error.stack);
-				await interact.reply(`An error has occurred: \`${error.message}\``);
+				await interact.reply({ content: `An error has occurred: \`${error.message}\``, ephemeral: true });
 			}
 		}
 	},
