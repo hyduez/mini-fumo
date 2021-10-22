@@ -7,7 +7,7 @@ export const event: Event<'interactionCreate'> = {
 
 		if (interact.isCommand() || interact.isContextMenu()) {
 			const cmd = bot.interact.get(interact.commandName);
-			interact.member = interact.guild.members.cache.get(interact.user.id);
+			if (interact.guild) interact.member = interact.guild.members.cache.get(interact.user.id);
 
 			try {
 				await cmd.run(bot, interact);
