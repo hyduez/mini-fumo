@@ -3,5 +3,5 @@ import { ClientEvents } from 'discord.js';
 
 export type Event<T extends keyof ClientEvents> = {
 	name: keyof ClientEvents;
-	run(bot: Client, ...args: ClientEvents[T])
+	run(bot: Client, ...args: ClientEvents[T]): Promise<unknown> | unknown
 }

@@ -1,7 +1,7 @@
 import { Client, Collection } from 'discord.js';
 import { config } from 'dotenv';
 import path from 'path';
-import { Interaction, Event } from '../Interfaces';
+import { Interaction, Event } from '../interfaces';
 import consola from 'consola';
 import { readdirSync } from 'fs';
 config();

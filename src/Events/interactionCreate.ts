@@ -1,5 +1,5 @@
 import { Interaction } from 'discord.js';
-import { Event } from '../Interfaces';
+import { Event } from '../interfaces';
 
 export const event: Event<'interactionCreate'> = {
 	name: 'interactionCreate',
