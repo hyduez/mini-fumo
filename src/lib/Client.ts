@@ -15,7 +15,14 @@ class Bot extends Client {
 	public events: Collection<string, Event> = new Collection();
 	public console = consola;
 	public constructor() {
-		super({ ws: { properties: { $browser: "Discord Android", $os: "Android" } }, intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] } });
+		super({
+			ws: {
+				properties: { $browser: "Discord Android", $os: "Android" }
+			},
+			intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'],
+			partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'],
+			allowedMentions: { parse: [] }
+		});
 		this.init();
 	}
 
