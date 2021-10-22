@@ -377,10 +377,10 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-fumo-api@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/fumo-api/-/fumo-api-3.0.2.tgz#9bcb95943b685945378c8b7c725b44c9286395be"
-  integrity sha512-Ksrii66tU7UDOXiAujsB5MId4SRmoTAwE/SJ7GO3Br1+ZG0FIh0spHTgk5Yvw3M9rwlTJqO132Gn5E/kuz6yzQ==
+fumo-api@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/fumo-api/-/fumo-api-3.0.3.tgz#5e5df0defdd66dc3224f81a5bc85e1002442c681"
+  integrity sha512-UQXIl1p2JjOtxgNCThr//ojvSKL/wsQXW7kRp5Zf6opYQ6fOraUkezYdkxX2fRKTNtEhclepT26WYkfIAIhTeg==
   dependencies:
     node-fetch "^2.6.1"
 

@@ -22,7 +22,7 @@
 		"consola": "^2.15.3",
 		"discord.js": "^13.2.0",
 		"dotenv": "^10.0.0",
-		"fumo-api": "^3.0.2",
+		"fumo-api": "^3.0.3",
 		"mongoose": "^5.13.7"
 	},
 	"repository": "https://github.com/Hyduez/MiniFumo/",

@@ -1,5 +1,5 @@
 import { Interaction } from '../../Interfaces';
-import { randomFumo } from 'fumo-api/src/index';
+import { randomFumo } from 'fumo-api';
 
 export const interaction: Interaction = {
 	name: 'getfumo',
