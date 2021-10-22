@@ -1,9 +1,9 @@
 import { Interaction } from 'discord.js';
 import { Event } from '../Interfaces';
 
-export const event: Event = {
+export const event: Event<'interactionCreate'> = {
 	name: 'interactionCreate',
-	run: async (bot, interact: Interaction) => {
+	run: async (bot, interact) => {
 
 		if (interact.isCommand() || interact.isContextMenu()) {
 			const cmd = bot.interact.get(interact.commandName);

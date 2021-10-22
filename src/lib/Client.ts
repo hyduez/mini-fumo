@@ -6,10 +6,12 @@ import consola from 'consola';
 import { readdirSync } from 'fs';
 config();
 
-const { GUILD } = process.env
+const { TESTSERVER } = process.env
 
 class Bot extends Client {
 	public interact: Collection<string, Interaction> = new Collection();
+
+	// @ts-expect-error
 	public events: Collection<string, Event> = new Collection();
 	public console = consola;
 	public constructor() {
@@ -20,7 +22,7 @@ class Bot extends Client {
 	public async init() {
 		await this.login();
 
-		const eventPath = path.join(__dirname, '..', 'Events');
+		const eventPath = path.join(__dirname, '..', 'events');
 		readdirSync(eventPath).forEach(async (file) => {
 			const { event } = await import(`${eventPath}/${file}`);
 			this.events.set(event.name, event);
@@ -29,7 +31,7 @@ class Bot extends Client {
 
 		const arrayOfInteraction = [];
 		const arrayOfInteractionPrivate = [];
-		const interacPath = path.join(__dirname, '..', 'Interaction');
+		const interacPath = path.join(__dirname, '..', 'interactions');
 
 		readdirSync(interacPath).forEach((dir) => {
 			const interactFolder = readdirSync(`${interacPath}/${dir}`).filter((file) => file.endsWith('.ts'));
@@ -47,7 +49,9 @@ class Bot extends Client {
 		});
 
 		this.once('ready', async () => {
-			await this.guilds.cache.get(GUILD).commands.set(arrayOfInteractionPrivate);
+			const guild = await this.guilds.fetch(TESTSERVER);
+
+			await guild.commands.set(arrayOfInteractionPrivate);
 			await this.application.commands.set(arrayOfInteraction);
 		});
 	}
