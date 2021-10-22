@@ -1,4 +1,4 @@
-import { Event } from '../interfaces';
+import { Event } from '../_interfaces';
 
 export const event: Event<'interactionCreate'> = {
 	name: 'interactionCreate',

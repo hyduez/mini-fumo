@@ -1,5 +1,5 @@
 import type { CommandInteraction } from 'discord.js';
-import { Interaction } from '../../interfaces';
+import { Interaction } from '../../_interfaces';
 
 export const interaction: Interaction = {
     name: 'avatar',
