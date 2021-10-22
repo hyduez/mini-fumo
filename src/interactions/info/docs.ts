@@ -19,16 +19,12 @@ export const interaction: Interaction = {
             description: 'Documentation version',
             type: 'STRING',
             required: false,
-            choices: [
-                {
-                    name: 'stable',
-                    value: 'stable'
-                },
-                {
-                    name: 'master',
-                    value: 'master'
+            choices: ['stable', 'master'].map((choice) => {
+                return {
+                    name: choice,
+                    value: choice
                 }
-            ]
+            })
         }
     ],
     run: async (_, interact) => {
