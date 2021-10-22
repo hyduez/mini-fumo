@@ -6,7 +6,7 @@ export const interaction: Interaction = {
 	description: 'Fumos?',
 	testOnly: false,
 	type: 'CHAT_INPUT',
-	run: async (bot, interact, args,) => {
+	run: async (_, interact) => {
 		await interact.deferReply();
 
 		try {

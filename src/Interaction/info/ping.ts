@@ -5,7 +5,7 @@ export const interaction: Interaction = {
 	description: 'Ping command',
 	testOnly: false,
 	type: 'CHAT_INPUT',
-	run: async (bot, interact, args) => {
+	run: async (bot, interact) => {
 		await interact.reply({ content: `Pong! ${bot.ws.ping}ms <:cirnu_hm:890470624055660585>` });
 	},
 };

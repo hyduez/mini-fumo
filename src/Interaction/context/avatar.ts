@@ -1,10 +1,11 @@
-import { CommandInteraction, MessageAttachment } from 'discord.js';
+import type { CommandInteraction } from 'discord.js';
+import { Interaction } from '../../Interfaces';
 
-export const interaction = {
+export const interaction: Interaction = {
     name: 'avatar',
     testOnly: false,
     type: 'USER',
-    run: async (bot, interact: CommandInteraction, _args: string[]) => {
+    run: async (_, interact: CommandInteraction) => {
         const user = interact.options.getUser('user', true);
 
         const avatar = user.avatarURL({ dynamic: true, size: 2048 });

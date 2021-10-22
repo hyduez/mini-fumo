@@ -1,12 +1,9 @@
 import Client from '../lib/Client';
-import { CommandInteraction, ApplicationCommandData } from 'discord.js';
+import type { CommandInteraction, ApplicationCommandData, Message } from 'discord.js';
 
-interface Run {
-	(bot: Client, interact: CommandInteraction, args: string[]);
-}
 
 export type Interaction = ApplicationCommandData & {
 	testOnly: boolean;
 	type: string;
-	run: Run;
+	run(bot: Client, interaction: CommandInteraction): Promise<void | Message>;
 };

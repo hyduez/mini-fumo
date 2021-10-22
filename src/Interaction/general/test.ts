@@ -12,7 +12,7 @@ export const interaction: Interaction = {
 		type: 'STRING',
 		required: false,
 	}],
-	run: async (_bot, interact, _args) => {
+	run: async (_bot, interact) => {
 
 		let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos now');
 

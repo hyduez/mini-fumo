@@ -31,7 +31,7 @@ export const interaction: Interaction = {
             ]
         }
     ],
-    run: async (bot, interact, args) => {
+    run: async (_, interact) => {
         await interact.deferReply({ ephemeral: false });
 
         const search = interact.options.getString('search', true);
