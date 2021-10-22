@@ -1,4 +1,4 @@
-import Client from '../Client';
+import Client from '../lib/Client';
 import { CommandInteraction, ApplicationCommandData } from 'discord.js';
 
 interface Run {

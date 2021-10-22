@@ -6,10 +6,11 @@ import consola from 'consola';
 import { readdirSync } from 'fs';
 config();
 
+const { GUILD } = process.env
+
 class Bot extends Client {
 	public interact: Collection<string, Interaction> = new Collection();
 	public events: Collection<string, Event> = new Collection();
-	public config = process.env;
 	public console = consola;
 	public constructor() {
 		super({ ws: { properties: { $browser: "Discord Android", $os: "Android" } }, intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS'], partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'USER'], allowedMentions: { parse: [] } });
@@ -17,7 +18,7 @@ class Bot extends Client {
 	}
 
 	public async init() {
-		await this.login(this.config.TOKEN);
+		await this.login();
 
 		const eventPath = path.join(__dirname, '..', 'Events');
 		readdirSync(eventPath).forEach(async (file) => {
@@ -46,7 +47,7 @@ class Bot extends Client {
 		});
 
 		this.once('ready', async () => {
-			await this.guilds.cache.get(this.config.TESTSERVER).commands.set(arrayOfInteractionPrivate);
+			await this.guilds.cache.get(GUILD).commands.set(arrayOfInteractionPrivate);
 			await this.application.commands.set(arrayOfInteraction);
 		});
 	}
