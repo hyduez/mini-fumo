@@ -7,10 +7,16 @@ export const interaction: Interaction = {
 	testOnly: false,
 	type: 'CHAT_INPUT',
 	run: async (bot, interact, args,) => {
-		await interact.deferReply({ ephemeral: false });
+		await interact.deferReply();
 
-		randomFumo().then((url) => {
-			interact.followUp({ content: url });
-		});
+		try {
+			const url = await randomFumo();
+
+			await interact.followUp(url);
+		} catch (err) {
+			const error = err as Error;
+
+			await interact.followUp(`🔥🐈 (${error.message})`)
+		}
 	},
 };

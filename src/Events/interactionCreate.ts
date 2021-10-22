@@ -7,7 +7,7 @@ export const event: Event = {
 
 		if (interact.isCommand()) {
 			const cmd = bot.interact.get(interact.commandName);
-			if (!cmd) return interact.followUp({ content: `An error has occured` });
+			if (!cmd) return interact.reply({ content: `An error has occured`, ephemeral: false });
 			const args = [];
 			for (let option of interact.options.data) {
 				if (option.type === 'SUB_COMMAND_GROUP') {
@@ -28,14 +28,30 @@ export const event: Event = {
 				} else if (option.value) args.push(option.value);
 			}
 			interact.member = interact.guild.members.cache.get(interact.user.id);
-			cmd.run(bot, interact, args).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
+
+			try {
+				await cmd.run(bot, interact, args);
+			} catch (err) {
+				const error = err as Error;
+
+				console.log(error.stack);
+				await interact.reply(`An error has occurred: \`${error.message}\``);
+			}
 		}
 		if (interact.isContextMenu()) {
 			const cmd = bot.interact.get(interact.commandName);
-			if (!cmd) return interact.followUp({ content: 'An error occured' });
+			if (!cmd) return interact.reply({ content: 'An error occured', ephemeral: true });
 			const args = [];
 			interact.member = interact.guild.members.cache.get(interact.user.id);
-			cmd.run(bot, interact, args).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``)});
+
+			try {
+				await cmd.run(bot, interact, args);
+			} catch (err) {
+				const error = err as Error;
+
+				console.log(error.stack);
+				await interact.reply(`An error has occurred: \`${error.message}\``);
+			}
 		}
 	},
 };
