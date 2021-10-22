@@ -38,14 +38,15 @@ export const interaction: Interaction = {
         const version = interact.options.getString('version');
 
         const url = `https://djsdocs.sorta.moe/v2/embed?src=${version || "stable"}&q=${encodeURIComponent(search)}`;
-        axios.get(url).then(({ data }) => {
-            if (data) {
-                (data as MessageEmbedOptions).fields.map((field) => field.value.length > 1000 ? field.value = field.value.slice(0, 1000) + '...' : null);
 
-                interact.followUp({ embeds: [data] }).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``) });
-            } else {
-                interact.followUp({ content: 'Oh no papu, no he podido hayar eso :\'v' });
-            }
-        });
+        const { data } = await axios.get(url);
+
+        if (data) {
+            (data as MessageEmbedOptions).fields.map((field) => field.value.length > 1000 ? field.value = field.value.slice(0, 1000) + '...' : null);
+
+            await interact.followUp({ embeds: [data] }).catch((e) => { interact.followUp(`An error has occurred: \`${e}\``) });
+        } else {
+            await interact.followUp({ content: 'Nothing found.' });
+        }
     },
 };
