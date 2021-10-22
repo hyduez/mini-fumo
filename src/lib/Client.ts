@@ -27,7 +27,11 @@ class Bot extends Client {
 	}
 
 	public async init() {
+<<<<<<< HEAD:src/lib/Client.ts
 		await this.login();
+=======
+		await this.login(this.config.token);
+>>>>>>> 42ed65dd57086455b4748e36150eeac9ee1b996b:src/Client/index.ts
 
 		const eventPath = path.join(__dirname, '..', 'events');
 		readdirSync(eventPath).forEach(async (file) => {
@@ -56,9 +60,13 @@ class Bot extends Client {
 		});
 
 		this.once('ready', async () => {
+<<<<<<< HEAD:src/lib/Client.ts
 			const guild = await this.guilds.fetch(TESTSERVER);
 
 			await guild.commands.set(arrayOfInteractionPrivate);
+=======
+			await this.guilds.cache.get(this.config.testserver).commands.set(arrayOfInteractionPrivate);
+>>>>>>> 42ed65dd57086455b4748e36150eeac9ee1b996b:src/Client/index.ts
 			await this.application.commands.set(arrayOfInteraction);
 		});
 	}

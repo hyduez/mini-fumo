@@ -15,7 +15,7 @@ export const interaction: Interaction = {
 	run: async (_bot, interact) => {
 
 		let url = Formatters.hyperlink('Fumos friday', 'https://github.com/hyduez', 'Fumos now');
-
+		
 		await interact.reply({ embeds: [{ description: url }] });
 	},
 };
