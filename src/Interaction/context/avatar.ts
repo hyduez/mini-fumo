@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageAttachment } from 'discord.js';
+import { CommandInteraction } from 'discord.js';
 
 export const interaction = {
     name: 'avatar',
@@ -7,8 +7,6 @@ export const interaction = {
     run: async (bot, interact: CommandInteraction, _args: string[]) => {
         const user = interact.options.getUser('user', true);
 
-        const avatar = user.avatarURL({ dynamic: true, size: 2048 });
-
-        await interact.reply({ content: avatar, ephemeral: true });
+        await interact.reply({ content: user.avatarURL({ dynamic: true, size: 2048 }), ephemeral: true });
     }
 }
