@@ -1,0 +1,34 @@
+{
+  "name": "eris-fumo",
+  "version": "1.0.1",
+  "description": "Un Fumo en Eris",
+  "main": "dist/index.js",
+  "author": "Hyduez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hyduez/MiniFumo"
+  },
+  "private": false,
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "console": "^0.7.2",
+    "dotenv": "^10.0.0",
+    "eris": "github:DonovanDMC/eris#everything",
+    "fs": "^0.0.1-security",
+    "fumo-api": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^16.11.6",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "tsc": "^2.0.3",
+    "typescript": "^4.4.4"
+  }
+}
