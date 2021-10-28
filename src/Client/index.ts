@@ -12,7 +12,7 @@ class Bot extends Client {
     public config = process.env;
     public console = console;
     public constructor() {
-        super(process.env.token, { intents: 6111, allowedMentions: { everyone: false, users: false, repliedUser: false, roles: false } });
+        super(process.env.token, { intents: 1, allowedMentions: { everyone: false, users: false, repliedUser: false, roles: false } });
         this.start();
     }
     public async start() {

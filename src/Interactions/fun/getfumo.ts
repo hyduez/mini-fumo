@@ -9,6 +9,6 @@ export const interaction: Interaction = {
 	run: async (bot, interact, args,) => {
 		await interact.defer();
 		const url = await randomFumo();
-		interact.createFollowup(url);
+		interact.createFollowup({ content: url });
 	},
 };

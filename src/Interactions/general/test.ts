@@ -14,6 +14,6 @@ export const interaction: Interaction = {
 	],
 	testOnly: true,
 	run: async (_bot, interact, _args) => {
-		interact.createMessage('Hola');
+		interact.createMessage({ content: 'Hi!', flags: 64 });
 	},
 };
