@@ -9,12 +9,7 @@ export const interaction: Interaction = {
 	type: Constants.ApplicationCommandTypes.CHAT_INPUT,
 	run: async (bot, interact, args,) => {
 		await interact.defer();
-		try {
-			const url = await randomFumo();
-			await interact.createFollowup(url);
-		} catch (err) {
-			const error = err as Error;
-			await interact.createFollowup({ content: `An error has occurred: \`${error.message}\`` });
-		}
+		const url = await randomFumo();
+		interact.createFollowup(url);
 	},
 };
