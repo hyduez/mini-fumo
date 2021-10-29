@@ -9,7 +9,7 @@
 ## » About
 
 This Bot is private, so it is designed to work according to the needs of your **[server](https://dsc.gg/fumos)**. With which, it is not intended that it is a Bot that is in several servers
-###### You will need NodeJS 10.4+.X
+###### You will need NodeJS 14.1+.X
 
 ## » Getting Started
 
