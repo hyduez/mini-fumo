@@ -192,7 +192,7 @@ dynamic-dedupe@^0.3.0:
 
 "eris@github:DonovanDMC/eris#everything":
   version "0.16.0-dev"
-  resolved "https://codeload.github.com/DonovanDMC/eris/tar.gz/3785198b71134818201e7f55368f8d5d01811704"
+  resolved "https://codeload.github.com/DonovanDMC/eris/tar.gz/284db88406c3b92a4104dcc884894dc33c92d98e"
   dependencies:
     ws "^7.4.6"
   optionalDependencies:
