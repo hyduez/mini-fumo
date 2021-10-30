@@ -6,17 +6,17 @@
   <a href='https://github.com/Hyduez/MiniFumo'><img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/hyduez/minifumo?label=Lines&logo=GITHUB"></a>
 </div>
 
-## » About
+## About
 
 This Bot is private, so it is designed to work according to the needs of your **[server](https://dsc.gg/fumos)**. With which, it is not intended that it is a Bot that is in several servers
 ###### You will need NodeJS 14.1+.X
 
-## » Getting Started
+## Getting Started
 
 To run the code, you must meet the required libraries. To do this, run in the console => `yarn install` 📦
 Once this action is done, you must configure the code to your liking. To start the bot you will have to put `yarn test` ✅
 
-## » Contributing
+## Contributing
 
 You can contribute with some improvement within the code or simply aesthetics. Fork this repository so you can start working. When you finish you can make a pull request, giving a description of the changes you have implemented ⭐
 
